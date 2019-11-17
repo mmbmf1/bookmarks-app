@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import BookmarksContext from '../BookmarksContext';
 import BookmarkItem from '../BookmarkItem/BookmarkItem';
 import './BookmarkList.css'
 

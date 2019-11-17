@@ -141,4 +141,4 @@ static contextType = BookmarksContext;
   }
 }
 
-export default withRouter(AddBookmark);
+export default AddBookmark;

@@ -71,7 +71,7 @@ class App extends Component {
   render() {
     const contextValue = {
       bookmarks: this.state.bookmarks,
-      addBookmark: this.addBookmark
+      addBookmark: this.addBookmark,
     }
     return (
       <main className='App'>
@@ -82,7 +82,7 @@ class App extends Component {
             <div className='content' aria-live='polite'>
             <Route
               path='/add-bookmark'
-              component={addBookmark}
+              component={AddBookmark}
             />
             <Route
               exact
