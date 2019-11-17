@@ -1,6 +1,30 @@
 import React from 'react';
 import Rating from '../Rating/Rating';
+import config from '../config';
 import './BookmarkItem.css';
+
+function deleteBookmarkRequest(bookmarkId, callback) {
+  fetch(config.API_ENDPOINT + `/${bookmarkId}`, {
+    method: 'DELETE',
+    headers: {
+      'authorization': `bearer ${config.API_KEY}`
+    }
+  })
+    .then(res => {
+      if(!res.ok) {
+        return res.json().then(error => {
+          throw error
+        })
+      }
+      return res.json()
+    })
+    .then(data => {
+      callback(bookmarkId)
+    })
+    .catch(error => {
+      console.error(error)
+    })
+}
 
 export default function BookmarkItem(props) {
   return (
