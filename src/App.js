@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import AddBookmark from './AddBookmark/AddBookmark';
 import BookmarkList from './BookmarkList/BookmarkList';
 import Nav from './Nav/Nav';
+import Rating from './Rating/Rating';
 import config from './config';
 import './App.css';
 
@@ -92,6 +93,7 @@ class App extends Component {
                 bookmarks={bookmarks} 
               />}
           />
+          <Rating />
         </div>
       </main>
     );

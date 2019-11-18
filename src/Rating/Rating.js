@@ -15,6 +15,6 @@ export default function Rating(props) {
   );
 }
 
-Rating.PropTypes = {
-  value: PropTypes.number
+Rating.defaultProps = {
+  value: 2
 };
