@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import AddBookmark from './AddBookmark/AddBookmark';
 import BookmarkList from './BookmarkList/BookmarkList';
+import EditBookmark from './EditBookmark/EditBookmark';
 import BookmarksContext from './BookmarksContext';
 import Nav from './Nav/Nav';
 import config from './config';
@@ -56,7 +57,13 @@ class App extends Component {
       })
   }
 
-  updateBookmark = () => {};
+  updateBookmark = updatedBookmark => {
+    this.setState({
+      bookmarks: this.state.bookmarks.map(bm =>
+        (bm.id !== updatedBookmark.id) ? bm : updatedBookmark
+      )
+    })
+  };
 
   render() {
     const contextValue = {

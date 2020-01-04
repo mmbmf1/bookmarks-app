@@ -8,7 +8,10 @@ class BookmarkList extends Component {
   static proptTypes = {
     bookmarks: PropTypes.arrayOf(
       PropTypes.shape({
-        id: PropTypes.string,
+        id: PropTypes.oneOfType([
+          PropTypes.number,
+          PropTypes.string,
+        ]).isRequired,
       })
     )
   };
